@@ -1,0 +1,17 @@
+== README
+
+Ecommerce site for http://www.prettyasapicturescarves.com
+
+Local:
+* git clone
+* bundle
+* rake db:setup
+* rails s
+
+Uses:
+* MySQL
+* Bootstrap
+* Devise
+* Active Admin
+* rspec
+* Factory Girl

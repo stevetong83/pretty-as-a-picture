@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  resources :products
+  resources :carts
+  resources :line_items
+
 end

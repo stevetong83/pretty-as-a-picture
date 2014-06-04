@@ -1,5 +1,5 @@
 %h1 Products
 
 - @products.each do |product|
-  = product.title
+  = link_to product.title, product
   = product.price

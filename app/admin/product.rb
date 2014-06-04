@@ -11,7 +11,7 @@ ActiveAdmin.register Product do
       f.input :title
       f.input :description
       f.input :price
-      f.input :quanity_available
+      f.input :quantity_available
     end
     # f.inputs do
     #   f.has_many :images, allow_destroy: true, heading: 'Images' do |image|

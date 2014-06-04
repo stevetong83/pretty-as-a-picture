@@ -1,0 +1,15 @@
+%h1 Cart
+
+%table.table
+  %thead
+    %tr
+      %td Product
+      %td Quantity
+  %tbody
+    - @line_items.each do |item|
+      %tr
+        %td= item.product.title
+        %td= item.quantity
+
+= link_to "Continue Shopping", '#', class: 'btn btn-primary'
+= link_to "Checkout", '#', class: 'btn btn-info'

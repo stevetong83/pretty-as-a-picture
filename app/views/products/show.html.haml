@@ -1,0 +1,8 @@
+%h1= @product.title
+
+%p= @product.description
+
+= simple_form_for @line_item do |f|
+  = f.input :product_id, as: :hidden, input_html: {value: @product.id}
+  = f.input :quantity
+  = f.submit "Add to Cart", class: 'btn btn-primary'

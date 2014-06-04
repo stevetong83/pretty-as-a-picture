@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :line_item do
-    product_id 1
-    cart_id 1
+    association :product
+    association :cart
+    association :order
   end
 end

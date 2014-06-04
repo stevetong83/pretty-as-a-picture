@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :products
-  resources :carts
+  get :cart, to: 'carts#index'
   resources :line_items
 
 end

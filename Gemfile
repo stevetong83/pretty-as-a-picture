@@ -39,6 +39,7 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 group :test do
+  gem "spring-commands-rspec"
   gem 'capybara'
   gem 'database_cleaner'
   gem 'rspec-rails'

@@ -13,5 +13,52 @@
  *= require_self
  */
 
+$black: #000
+$white: #fff
+
 @import "bootstrap_overrides"
 @import "pages"
+
+img 
+  max-width: 100%
+
+#large-navigation
+  margin-bottom: 25px
+  #logo-title
+    font-size: 24px
+    padding-top: 25px
+
+  #main-navigation
+    position: absolute
+    bottom: 25px
+    right: 15px
+    li
+      display: inline-block
+      font-size: 16px
+      padding-left: 15px
+      a
+        color: $black
+
+  #cart
+    text-align: right
+    margin-top: 5px
+    li 
+      display: inline-block
+      a 
+        color: $black
+
+#homepage
+  #primary-image
+    max-width: 80%
+    float: right
+    padding-bottom: 80px
+
+  #secondary-image
+    max-width: 35%
+    position: absolute
+    margin-top: 70px
+    left: 0
+
+#footer
+  margin: 25px 0
+  text-align: center

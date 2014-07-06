@@ -1,4 +1,4 @@
-lineclass LineItem < ActiveRecord::Base
+class LineItem < ActiveRecord::Base
 
   belongs_to :product
   belongs_to :cart
@@ -6,4 +6,8 @@ lineclass LineItem < ActiveRecord::Base
 
   validates :product, :cart, presence: true
   validates :product_id, uniqueness: { scope: :cart_id }
+
+  def total
+    product.price * quantity
+  end
 end

@@ -4,12 +4,25 @@
   %thead
     %tr
       %td Product
+      %td Price each
       %td Quantity
+      %td Total
+      %td Actions
   %tbody
     - @line_items.each do |item|
       %tr
         %td= item.product.title
+        %td= number_to_currency item.product.price
         %td= item.quantity
+        %td= number_to_currency item.total
+        %td
+          = link_to "Remove", item, data: { confirm: "Are you sure?"}, method: :delete
+.row
+  %strong Total
+  = number_to_currency @cart.total
 
-= link_to "Continue Shopping", '#', class: 'btn btn-primary'
-= link_to "Checkout", '#', class: 'btn btn-info'
+.row
+
+  = link_to "Empty Cart", cart_clear_path, data: { confirm: "Are you sure you want to empty your cart?" }
+  = link_to "Continue Shopping", products_path, class: 'btn btn-primary'
+  = link_to "Checkout", '#', class: 'btn btn-info'

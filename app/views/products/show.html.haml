@@ -1,8 +1,14 @@
-%h1= @product.title
+.row
+  .col-md-6
+    = image_tag('product_demo.jpg')
 
-%p= @product.description
+  .col-md-6
 
-= simple_form_for @line_item do |f|
-  = f.input :product_id, as: :hidden, input_html: {value: @product.id}
-  = f.input :quantity
-  = f.submit "Add to Cart", class: 'btn btn-primary'
+    %h1= @product.title
+
+    %p= @product.description
+
+    = simple_form_for @line_item do |f|
+      = f.input :product_id, as: :hidden, input_html: {value: @product.id}
+      = f.input :quantity
+      = f.submit "Add to Cart", class: 'btn btn-primary'

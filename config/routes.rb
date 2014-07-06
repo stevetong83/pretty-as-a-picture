@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :products
+
   get :cart, to: 'carts#index'
+  get 'cart/clear', to: 'carts#clear'
+  
   resources :line_items
 
 end

@@ -1,0 +1,13 @@
+.row
+  .col-sm-12
+    %h1 Contact Us
+    %hr
+
+.row
+  .col-sm-12
+    .well
+      = simple_form_for @message do |f|
+        = f.input :name
+        = f.input :email
+        = f.input :message
+        = f.submit 'Send', class: 'btn btn-primary'

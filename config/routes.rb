@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   
   resources :line_items
   resources :checkout_wizard
+  resources :messages, only: :create
+  get 'contact-us', to: 'messages#new'
 
 end

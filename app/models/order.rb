@@ -1,6 +1,8 @@
 class Order < ActiveRecord::Base
 
   belongs_to :user
+  belongs_to :shipping_address
+  belongs_to :billing_address
 
   has_many :line_items
 

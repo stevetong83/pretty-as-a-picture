@@ -1,5 +1,7 @@
 %h1 Products
-
-- @products.each do |product|
-  = link_to product.title, product
-  = product.price
+.row
+  - @products.each do |product|
+    .col-sm-3
+      = image_tag('product_demo.jpg')
+      = link_to product.title, product
+      = product.price

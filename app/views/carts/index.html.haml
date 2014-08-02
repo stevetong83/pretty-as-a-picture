@@ -1,28 +1,35 @@
-%h1 Cart
-
-%table.table
-  %thead
-    %tr
-      %td Product
-      %td Price each
-      %td Quantity
-      %td Total
-      %td Actions
-  %tbody
-    - @line_items.each do |item|
-      %tr
-        %td= item.product.title
-        %td= number_to_currency item.product.price
-        %td= item.quantity
-        %td= number_to_currency item.total
-        %td
-          = link_to "Remove", item, data: { confirm: "Are you sure?"}, method: :delete
 .row
-  %strong Total
-  = number_to_currency @cart.total
+  .col-sm-12
+    %h1 Cart
+    %hr
 
 .row
+  .col-sm-12
 
-  = link_to "Empty Cart", cart_clear_path, data: { confirm: "Are you sure you want to empty your cart?" }
-  = link_to "Continue Shopping", products_path, class: 'btn btn-primary'
-  = link_to "Checkout", '#', class: 'btn btn-info'
+    %table.table
+      %thead
+        %tr
+          %td Product
+          %td Price each
+          %td Quantity
+          %td Total
+          %td Actions
+      %tbody
+        - @line_items.each do |item|
+          %tr
+            %td= item.product.title
+            %td= number_to_currency item.product.price
+            %td= item.quantity
+            %td= number_to_currency item.total
+            %td
+              = link_to "Remove", item, data: { confirm: "Are you sure?"}, method: :delete
+.row
+  .col-sm-12
+    %strong Total
+    = number_to_currency @cart.total
+
+.row
+  .col-sm-12
+    = link_to "Empty Cart", cart_clear_path, data: { confirm: "Are you sure you want to empty your cart?" }
+    = link_to "Continue Shopping", products_path, class: 'btn btn-primary'
+    = link_to "Checkout", "#{current_user ? checkout_wizard_path(:shipping_information) : checkout_wizard_path(:authenticate)}", class: 'btn btn-info'

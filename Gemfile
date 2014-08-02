@@ -23,6 +23,7 @@ gem 'cancan'
 gem 'bootstrap-sass'
 gem "simple-navigation"
 gem 'simple_form'
+gem 'wicked'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

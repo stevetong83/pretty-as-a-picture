@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get 'cart/clear', to: 'carts#clear'
   
   resources :line_items
+  resources :checkout_wizard
 
 end

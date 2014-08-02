@@ -1,0 +1,16 @@
+.wizard
+  %a{href: wizard_path(:shipping_information), class: params[:id] == "shipping_information" ? "current" : ""}
+    %span.badge 1
+    Shipping
+  %a{href: wizard_path(:billing_information), class: params[:id] == "billing_information" ? "current" : ""}
+    %span.badge 2
+    Billing
+  %a{href: wizard_path(:payment_information), class: params[:id] == "payment_information" ? "current" : ""}
+    %span.badge 3
+    Payment
+  %a{href: wizard_path(:review), class: params[:id] == "review" ? "current" : ""}
+    %span.badge 4
+    Review
+  %a{href: wizard_path(:finish), class: params[:id] == "finish" ? "current" : ""}
+    %span.badge 5
+    Complete

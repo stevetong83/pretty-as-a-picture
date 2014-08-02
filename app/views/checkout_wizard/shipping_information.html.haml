@@ -1,0 +1,19 @@
+.row
+  .col-sm-12
+    %h1 Shipping Information
+    = render 'checkout_wizard/breadcrumbs'
+
+.row
+  .col-sm-12
+    .well
+      = simple_form_for @order, url: checkout_wizard_path(:shipping_information), method: :post do |f|
+        = f.simple_fields_for :shipping_address do |shipping|
+          = shipping.input :first_name
+          = shipping.input :last_name
+          = shipping.input :address
+          = shipping.input :address2
+          = shipping.input :city
+          = shipping.input :state
+          = shipping.input :zip
+          = shipping.input :phone
+        = f.submit 'Next: Billing Information', class: 'btn btn-primary'

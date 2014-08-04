@@ -1,15 +1,22 @@
 .row
   .col-sm-12
+    %h1 Sign Up
+    %hr
+
+.row
+  .col-sm-8
     .well
-      .row
-        .col-sm-3
-          = render "devise/shared/links"
-        .col-sm-9
-          %h2 Sign up
-          = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-            = f.error_notification
-            = f.input :email, required: true, autofocus: true
-            = f.input :password, required: true
-            = f.input :password_confirmation, required: true
-            = f.submit "Sign up"
+      = simple_form_for resource, as: resource_name, url: registration_path(resource_name), wrapper: :form_horizontal do |f|
+        = f.error_notification
+        = f.input :email, required: true, autofocus: true
+        = f.input :password, required: true
+        = f.input :password_confirmation, required: true
+        .row
+          .col-sm-offset-2.col-sm-10
+            = f.submit "Sign Up", class: 'btn btn-primary'
+
+  .col-sm-4
+    .well.text-center
+      %h2 Sign In
+      = link_to "Sign In", new_user_session_path, class: 'btn btn-primary'
       

@@ -13,12 +13,14 @@
       %ul.nav.navbar-nav.navbar-right
         %li= link_to "Home", root_path
         %li= link_to "Products", products_path
+        %li= link_to "Cart", cart_path
         %li= link_to "About Us", '#'
         %li= link_to "Contact", contact_us_path
-        %li= link_to "Cart", cart_path
-        %li= link_to "Sign in", new_user_session_path
-        %li= link_to "Sign up", new_user_registration_path
-        %li= link_to "Sign Out", destroy_user_session_path, method: :delete  
+        - if current_user
+          %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+        - else
+          %li= link_to "Sign in", new_user_session_path
+          %li= link_to "Sign up", new_user_registration_path 
 
 
 #large-navigation.hidden-xs

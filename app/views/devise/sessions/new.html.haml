@@ -1,16 +1,21 @@
 .row
-  .col-sm-6
+  .col-sm-12
+    %h1 Sign In
+    %hr
+.row
+  .col-sm-8
     .well
-      %h1.text-center Sign in
-      = simple_form_for resource, as: resource_name, url: session_path(resource_name)do |f|
-        .form-group
-          = f.label :email
-          = f.text_field :email, required: true, autofocus: true, class: 'form-control'
+      = simple_form_for resource, as: resource_name, url: session_path(resource_name), wrapper: :form_horizontal do |f|
+        = f.input :email, required: true, autofocus: true
         = f.input :password, required: false
-        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-        = f.submit "Sign in", class: 'btn btn-primary'
+        .row
+          .col-sm-offset-2.col-sm-10.form-group
+            = link_to "Forgot Password?", new_user_password_path
+        .row
+          .col-sm-offset-2.col-sm-10
+            = f.submit "Sign in", class: 'btn btn-primary'
 
-  .col-sm-6
+  .col-sm-4
     .well.text-center
-      %h1 Sign Up
+      %h2 Sign Up
       = link_to "Create New Account", new_user_registration_path, class: 'btn btn-primary'

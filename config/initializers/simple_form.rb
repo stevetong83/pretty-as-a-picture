@@ -45,17 +45,6 @@ SimpleForm.setup do |config|
     b.use :error, wrap_with: { tag: :span, class: :error }
   end
 
-  config.wrappers :vertical_form, :tag => 'div', :class => 'form-group', :error_class => 'error' do |b|
-    b.use :html5
-    b.use :placeholder
-    b.wrapper :tag => 'div', :class => 'controls' do |ba|
-      ba.use :label_text
-      ba.use :input, :wrap_with => { :class => 'form_control' }
-      ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
-      ba.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
-    end
-  end
-
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :default
 
@@ -106,10 +95,10 @@ SimpleForm.setup do |config|
   # config.label_text = lambda { |label, required| "#{required} #{label}" }
 
   # You can define the class to use on all labels. Default is nil.
-  config.label_class = 'control-label'
+  # config.label_class = 'control-label'
 
   # You can define the class to use on all forms. Default is simple_form.
-  # config.form_class = :simple_form
+  config.form_class = "simple_form"
 
   # You can define which elements should obtain additional classes
   # config.generate_additional_classes_for = [:wrapper, :label, :input]
@@ -152,5 +141,6 @@ SimpleForm.setup do |config|
   # config.cache_discovery = !Rails.env.development?
 
   # Default class for inputs
-  # config.input_class = nil
+  # config.input_class = "form-control"
+  
 end

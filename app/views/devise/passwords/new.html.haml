@@ -1,0 +1,14 @@
+.row
+  .col-sm-12
+    %h1 Forgot your password?
+    %hr
+
+.row
+  .col-sm-12
+    .well
+      = simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, wrapper: :form_horizontal do |f|
+        = f.error_notification
+        = f.input :email, required: true, autofocus: true
+        .row
+          .col-sm-offset-2.col-sm-10
+            = f.submit "Send me reset password instructions", class: 'btn btn-primary'

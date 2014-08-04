@@ -6,8 +6,10 @@
 .row
   .col-sm-12
     .well
-      = simple_form_for @message do |f|
+      = simple_form_for @message, wrapper: :form_horizontal do |f|
         = f.input :name
         = f.input :email
-        = f.input :message
-        = f.submit 'Send', class: 'btn btn-primary'
+        = f.input :message, input_html: {rows: 8}
+        .row
+          .col-sm-offset-2.col-sm-10
+            = f.submit 'Send', class: 'btn btn-primary'

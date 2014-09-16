@@ -11,10 +11,11 @@ Rails.application.routes.draw do
 
   get :cart, to: 'carts#index'
   get 'cart/clear', to: 'carts#clear'
-  
+
   resources :line_items
   resources :checkout_wizard
   resources :messages, only: :create
   get 'contact-us', to: 'messages#new'
+  get 'about-us', to: 'pages#about'
 
 end

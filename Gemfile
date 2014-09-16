@@ -25,9 +25,12 @@ gem "simple-navigation"
 gem 'simple_form'
 gem 'wicked'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'active_admin_editor'
+
+gem 'newrelic_rpm'
+
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+
 gem 'jbuilder', '~> 2.0'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

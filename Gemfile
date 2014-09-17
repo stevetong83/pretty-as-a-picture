@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
 
-gem 'mysql2'
-
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -42,6 +40,11 @@ gem 'spring',        group: :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :production do
+  gem 'pg'
+  gem 'thin'
+end
+
 group :test do
   gem "spring-commands-rspec"
   gem 'capybara'
@@ -51,6 +54,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'mysql2'
   gem 'pry'
   gem 'pry-nav'
   gem 'factory_girl_rails'

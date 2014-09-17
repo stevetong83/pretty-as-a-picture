@@ -13,8 +13,3 @@ test:
   database: pretty_as_a_picture_test
   pool: 5
 
-production:
-  adapter: mysql2
-  encoding: utf8
-  database: pretty_as_a_picture_production
-  pool: 5
